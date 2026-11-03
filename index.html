@@ -219,6 +219,14 @@ main{position:relative;z-index:1}
 .cclock b{font:800 14px var(--head);color:#fff;font-variant-numeric:tabular-nums;letter-spacing:.02em}
 .cbuy.hot{background:var(--gold);border-color:transparent;color:#2a1405}
 .cbuy.hot:hover{filter:brightness(1.07)}
+.buyways{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.bw{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.bw-2{border-color:rgba(255,179,71,.5);background:linear-gradient(120deg,rgba(255,179,71,.12),rgba(232,52,15,.08))}
+.bw-n{flex:0 0 32px;height:32px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:#2a1405;font:800 15px var(--head)}
+.bw b{display:block;font:700 16px/1.3 var(--head);color:#fff}
+.bw small{display:block;margin-top:4px;font:500 13.5px/1.45 var(--head);color:var(--muted)}
+.bw em{font-style:normal;font-weight:700;color:#ffd9a0}
+@media (max-width:760px){.buyways{grid-template-columns:1fr;gap:10px}}
 .cbonus{border:1.5px dashed rgba(255,179,71,.45);background:linear-gradient(90deg,rgba(255,179,71,.14),rgba(232,52,15,.12));color:var(--a1)}
 .rail-bar{display:flex;align-items:center;gap:18px}
 .rail-prog{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden}
@@ -994,7 +1002,13 @@ footer:has(+ .cristv-sec){padding-bottom:10px}
       <button class="rbtn next" type="button" id="railNext" aria-label="Próximos cursos"><svg><use href="#i-arrow"/></svg></button>
     </div>
   </div>
-  <div class="wrap"><p class="hint"><svg><use href="#i-hand"/></svg>Arraste para o lado e conheça cada curso</p></div>
+  <div class="wrap">
+    <div class="buyways rv-b">
+      <div class="bw"><span class="bw-n">1</span><div><b>Quer tudo? Leve o combo completo</b><small>Todos os cursos + os bônus da Cris, pelo preço da Black Friday.</small></div></div>
+      <div class="bw bw-2"><span class="bw-n">2</span><div><b>Quer só um curso? Pode comprar separado</b><small>Cada curso tem o botão <em>“Comprar só este curso”</em>, também com desconto de Black. Você escolhe.</small></div></div>
+    </div>
+    <p class="hint"><svg><use href="#i-hand"/></svg>Arraste para o lado e conheça cada curso</p>
+  </div>
   <div class="rail" id="rail" tabindex="0" aria-label="Lista dos cursos do combo"></div>
   <div class="wrap rail-bar">
     <div class="rail-prog" id="railProg"><i></i></div>
@@ -1575,7 +1589,7 @@ footer:has(+ .cristv-sec){padding-bottom:10px}
   var rail = $('#rail');
   rail.innerHTML = CURSOS.map(function(c, i){
     var media = c.img ? '<img src="' + IMG[c.img] + '" alt="Capa do curso ' + c.n + '" draggable="false" loading="lazy" decoding="async">' : capa(c.capa, i, c.n);
-    return '<article class="ccard"><div class="cimg">' + media + '</div><div class="cbody"><div class="ctop"><span class="cnum">' + (c.dia1 ? '★' : (i + 1 - (CURSOS[0].dia1 ? 1 : 0)) + 'º') + '</span><span class="ctag' + (c.dia1 ? ' hot' : '') + '">' + c.tag + '</span></div><h3>' + c.n + '</h3><p>' + c.d + '</p><div class="cfoot"><svg><use href="#i-check"/></svg>Acesso vitalício · incluso no combo</div>' + (c.dia1 ? '<div class="cclock"><svg><use href="#i-cal"/></svg><span>Compra separada só até ' + VIRADA.toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'}).replace(',', ' às').replace(/:00$/, 'h') + '</span><b class="js-geclock">--:--:--</b></div>' : '') + (c.buy ? '<a class="cbuy' + (c.dia1 ? ' hot' : '') + '" href="' + c.buy + '" draggable="false">Comprar só este curso <svg><use href="#i-arrow"/></svg></a>' : '<span class="cbonus">🎁 Bônus Black da Cris</span>') + '</div></article>';
+    return '<article class="ccard"><div class="cimg">' + media + '</div><div class="cbody"><div class="ctop"><span class="cnum">' + (c.dia1 ? '★' : (i + 1 - (CURSOS[0].dia1 ? 1 : 0)) + 'º') + '</span><span class="ctag' + (c.dia1 ? ' hot' : '') + '">' + c.tag + '</span></div><h3>' + c.n + '</h3><p>' + c.d + '</p><div class="cfoot"><svg><use href="#i-check"/></svg>Acesso vitalício · incluso no combo</div>' + (c.dia1 ? '<div class="cclock"><svg><use href="#i-cal"/></svg><span>Compra separada só até ' + VIRADA.toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit',timeZone:'America/Sao_Paulo'}).replace(',', ' às').replace(/:00$/, 'h') + '</span><b class="js-geclock">--:--:--</b></div>' : '') + (c.buy ? '<a class="cbuy' + (c.dia1 ? ' hot' : '') + '" href="' + c.buy + '" draggable="false">Comprar só este curso <svg><use href="#i-arrow"/></svg></a>' : '<span class="cbonus">🎁 Bônus Black da Cris · só no combo</span>') + '</div></article>';
   }).join('');
   var cards = $$('.ccard', rail);
   (function(){
