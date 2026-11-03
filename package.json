@@ -1,0 +1,7 @@
+{
+  "name": "crisdoces-black-friday",
+  "private": true,
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}
