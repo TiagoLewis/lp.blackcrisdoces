@@ -16,6 +16,27 @@
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Young+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=VT323&family=Young+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"></noscript>
 <script>document.documentElement.classList.add('js')</script>
+<!-- Meta Pixel (versão leve): o PageView é registrado na hora, mas o fbevents.js
+     só é baixado depois que a página termina de carregar ou no 1º toque/rolagem. -->
+<script>
+!function(f,b,e,v){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+var done=0,go=function(){if(done)return;done=1;var t=b.createElement(e);t.async=!0;t.src=v;b.head.appendChild(t);};
+f.__fbLoad=go;
+f.addEventListener('load',function(){(f.requestIdleCallback||setTimeout)(go,{timeout:2500});});
+['pointerdown','touchstart','scroll','keydown'].forEach(function(ev){f.addEventListener(ev,go,{once:!0,passive:!0});});
+}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1377585655959737');
+fbq('track','PageView');
+/* cliques: checkout da Hotmart = InitiateCheckout · WhatsApp = Contact */
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a[href]');if(!a)return;var h=a.href||'';
+  if(h.indexOf('pay.hotmart.com')>-1){window.__fbLoad();fbq('track','InitiateCheckout');}
+  else if(h.indexOf('wa.me')>-1||h.indexOf('whatsapp')>-1){window.__fbLoad();fbq('track','Contact');}
+},true);
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1377585655959737&ev=PageView&noscript=1"></noscript>
+
 <style>
 /* =========================================================
    CONFIGURAÇÃO RÁPIDA (tudo no começo do <script> lá embaixo)
