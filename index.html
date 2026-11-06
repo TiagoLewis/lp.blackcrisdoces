@@ -243,7 +243,7 @@ main{position:relative;z-index:1}
 .cclock b{font:800 14px var(--head);color:#fff;font-variant-numeric:tabular-nums;letter-spacing:.02em}
 .cbuy.hot{background:var(--gold);border-color:transparent;color:#2a1405}
 .cbuy.hot:hover{filter:brightness(1.07)}
-.buyways{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.buyways{display:grid;grid-template-columns:1fr;gap:14px;margin-top:30px;max-width:620px}
 .bw{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
 .bw-2{border-color:rgba(255,179,71,.5);background:linear-gradient(120deg,rgba(255,179,71,.12),rgba(232,52,15,.08))}
 .bw-n{flex:0 0 32px;height:32px;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:#2a1405;font:800 15px var(--head)}
@@ -1028,8 +1028,7 @@ footer:has(+ .cristv-sec){padding-bottom:10px}
   </div>
   <div class="wrap">
     <div class="buyways rv-b">
-      <div class="bw"><span class="bw-n">1</span><div><b>Quer tudo? Leve o combo completo</b><small>Todos os cursos + os bônus da Cris, pelo preço da Black Friday.</small></div></div>
-      <div class="bw bw-2"><span class="bw-n">2</span><div><b>Quer só um curso? Pode comprar separado</b><small>Cada curso tem o botão <em>“Comprar só este curso”</em>, também com desconto de Black. Você escolhe.</small></div></div>
+      <div class="bw bw-2"><div><b>Quer só um curso? Pode comprar separado</b><small>Cada curso tem o botão <em>“Comprar só este curso”</em>, também com desconto de Black. Você escolhe.</small></div></div>
     </div>
     <p class="hint"><svg><use href="#i-hand"/></svg>Arraste para o lado e conheça cada curso</p>
   </div>
@@ -1145,7 +1144,7 @@ footer:has(+ .cristv-sec){padding-bottom:10px}
             <div class="ph-chat">
               <div class="typing" style="--d:0s"><i></i><i></i><i></i></div>
               <div class="msg" style="--d:.9s">Oi! Aqui é a Cris 🧁<br>Olha só tudo o que você leva no combo Black Friday:<time>agora</time></div>
-              <div class="msg list" style="--d:1.25s"><ul><li style="--d:1.40s"><svg><use href="#i-tick"/></svg><span><span class="js-n">12</span> cursos completos de confeitaria</span></li><li class="js-dia1" style="--d:1.52s"><svg><use href="#i-tick"/></svg><span>Geração de Empreendedores 4.0 <b class="only">só no 1º dia</b></span></li><li style="--d:1.65s"><svg><use href="#i-tick"/></svg>Precificação e Delivery Inteligente</li><li style="--d:1.90s"><svg><use href="#i-tick"/></svg>Páscoa 10K, Receitas Natalinas e Receitas Fit</li><li style="--d:2.15s"><svg><use href="#i-tick"/></svg>Acesso vitalício e imediato</li><li style="--d:2.40s"><svg><use href="#i-tick"/></svg>Sem assinatura e sem mensalidade</li><li style="--d:2.65s"><svg><use href="#i-tick"/></svg>Garantia incondicional de 7 dias</li></ul><time>agora <svg><use href="#i-tick"/></svg></time></div>
+              <div class="msg list" style="--d:1.25s"><ul><li style="--d:1.40s"><svg><use href="#i-tick"/></svg><span><span class="js-n">12</span> cursos completos de confeitaria</span></li><li class="js-dia1" style="--d:1.52s"><svg><use href="#i-tick"/></svg><span>Geração de Empreendedores 4.0 <b class="only">só no 1º dia</b></span></li><li style="--d:1.65s"><svg><use href="#i-tick"/></svg>Precificação e Delivery Inteligente</li><li style="--d:1.90s"><svg><use href="#i-tick"/></svg>Páscoa 10K, Receitas Natalinas e Receitas Fit</li><li style="--d:2.15s"><svg><use href="#i-tick"/></svg>Acesso vitalício e imediato aos 12 cursos</li><li style="--d:2.40s"><svg><use href="#i-tick"/></svg>Sem assinatura e sem mensalidade</li><li style="--d:2.65s"><svg><use href="#i-tick"/></svg>Garantia incondicional de 7 dias</li></ul><time>agora <svg><use href="#i-tick"/></svg></time></div>
               <div class="msg bonus" style="--d:3.40s"><b>+ 2 BÔNUS</b><span>liberados junto com o seu acesso</span><time>agora</time></div>
               <div class="msg" style="--d:4.00s">Te espero lá dentro! ♡<time>agora</time></div>
             </div>
@@ -1158,7 +1157,7 @@ footer:has(+ .cristv-sec){padding-bottom:10px}
         <div class="people"><div class="av"><img src="img/aluno-01.webp" alt="" loading="lazy" decoding="async"><img src="img/aluno-02.webp" alt="" loading="lazy" decoding="async"><img src="img/aluno-03.webp" alt="" loading="lazy" decoding="async"><img src="img/aluno-04.webp" alt="" loading="lazy" decoding="async"></div><p><b>+8.000 alunos</b><br>já aprenderam com a Cris</p></div>
         <div class="ge-box js-dia1">
           <img src="img/curso-ge.webp" alt="Formação Geração de Empreendedores 4.0" loading="lazy" decoding="async">
-          <div><span class="ge-tag"><svg><use href="#i-bolt"/></svg>Só no 1º dia</span><b>+ Geração de Empreendedores 4.0</b><small>A formação da Cris entra no seu combo se você comprar no primeiro dia.</small></div>
+          <div><span class="ge-tag"><svg><use href="#i-bolt"/></svg>Só no 1º dia</span><b>+ Geração de Empreendedores 4.0</b><small>A formação da Cris entra no seu combo se você comprar no primeiro dia. Bônus com acesso por tempo limitado (não é vitalício).</small></div>
         </div>
         <p class="from">Acesso completo por apenas</p>
         <div class="price"><small>R$</small><b id="priceVal">339</b><em>,00</em></div>
@@ -1422,7 +1421,7 @@ footer:has(+ .cristv-sec){padding-bottom:10px}
   var FAQ = [
     ['Eu não sei nada de confeitaria. Vou conseguir acompanhar?','Sim. O combo serve tanto para quem já vende doces e bolos quanto para quem quer começar agora. As aulas são em vídeo, passo a passo, e você assiste no seu ritmo.'],
     ['É assinatura ou tem mensalidade?','Não. É um pagamento único, sem assinatura e sem cobranças recorrentes.'],
-    ['Por quanto tempo vou ter acesso?','Para sempre. O acesso é vitalício: você assiste onde e quando quiser, sem prazo para terminar.'],
+    ['Por quanto tempo vou ter acesso?','Aos 12 cursos do combo, para sempre: o acesso é vitalício e você assiste onde e quando quiser, sem prazo para terminar. A formação Geração de Empreendedores 4.0, bônus de quem compra no 1º dia, tem acesso por tempo limitado e não é vitalícia.'],
     ['Quais cursos estão no combo?', CURSOS.map(function(c){return c.n;}).join(', ').replace(/, ([^,]*)$/,' e $1') + '.'],
     ['Como eu recebo o acesso após a compra?','Logo após a confirmação do pagamento, o acesso é liberado no e-mail cadastrado na Hotmart. No Pix e no cartão, a liberação é imediata.'],
     ['Posso assistir pelo celular?','Sim. Você assiste pelo celular, tablet ou computador.'],
@@ -1606,7 +1605,7 @@ footer:has(+ .cristv-sec){padding-bottom:10px}
 
   /* ---- Geração de Empreendedores 4.0: card com compra separada só no 1º dia (some na VIRADA) ---- */
   var GE_BUY = 'https://pay.hotmart.com/E102453934W?off=ali05kwv';
-  if (Date.now() < VIRADA) CURSOS.unshift({n:'Geração de Empreendedores 4.0', tag:'Só no 1º dia', img:'ge', dia1:true, buy:GE_BUY, d:'A formação da Cris para transformar a confeitaria em negócio. Entra no combo e fica à venda separada só até a virada.'});
+  if (Date.now() < VIRADA) CURSOS.unshift({n:'Geração de Empreendedores 4.0', tag:'Só no 1º dia', img:'ge', dia1:true, buy:GE_BUY, d:'A formação da Cris para transformar a confeitaria em negócio. Entra no combo e fica à venda separada só até a virada. Acesso por tempo limitado (não é vitalício).'});
 
   /* ---- carrossel de cursos ---- */
   var rail = $('#rail');
